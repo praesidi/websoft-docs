@@ -1,0 +1,9 @@
+{
+	"global-variables": "Глобальные переменные",
+	"built-in-functions": "Встроенные функции",
+	"built-in-libs": "Встроенные библиотеки",
+	"built-in-objects": "Встроенные объекты",
+	"adding-typescript": "Подключение TypeScript к SSJS",
+	"recommendations": "Общие рекомендации",
+	"templates": "Шаблоны"
+}

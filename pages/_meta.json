@@ -1,15 +1,17 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
-  }
+	"index": "Введение",
+	"components": "Составляющие WebTutor",
+	"programming-in-websoft": "Программирование в системе",
+	"print-template": "Печатные формы",
+	"useful-links": "Полезные ссылки",
+	"about": {
+		"title": "О WebSoft HCM",
+		"type": "page"
+	},
+	"contact": {
+		"title": "Telegram ↗",
+		"type": "page",
+		"href": "https://web.telegram.org/k/#@praesidi",
+		"newWindow": true
+	}
 }

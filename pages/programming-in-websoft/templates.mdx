@@ -1,0 +1,63 @@
+﻿# Полезные шаблоны
+
+## Подклчюение SPA в WebSoft
+
+```js
+<%
+  function GetParam(name) {
+    return tools_web.get_web_param( curParams, name, "NaN", 0 );
+  }
+
+  var sHtmlMainPage = LoadFileData(UrlToFilePath('x-local://wt/web/project_name/frontend/dist/index.html'))
+%>
+
+<script>
+	window._app = {
+    backendID: '<%=OptInt(GetParam("BACKEND_ID"))%>'
+	}
+</script>
+
+<%
+ Response.Write(sHtmlMainPage)
+%>
+```
+
+`BACKEND_ID` это id веб-шаблона вашего бэка. Чтобы его получить, нужно в веб-шаблоне, где вы вставили код выше, создать переменную BACKEND_ID с типом "Ссылка на объект в сиcтеме" и выбрать нужный объект.
+
+## Шаблон агента
+
+```js
+var GLOBAL = {};
+GLOBAL["IS_DEBUG"] = tools_web.is_true(Param.IS_DEBUG);
+
+function Log(value) {
+	if (GLOBAL["IS_DEBUG"]) alert(value);
+}
+
+function Main() {
+	try {
+		Log(GLOBAL["IS_DEBUG"]);
+	} catch (e) {
+		throw Error("Main -> " + e.message);
+	}
+}
+
+Log("----------------Начало. Агент------------------");
+
+var mainTimer = DateToRawSeconds(Date());
+try {
+	Main();
+} catch (e) {
+	Log(e.message);
+}
+
+mainTimer = DateToRawSeconds(Date()) - mainTimer;
+Log("Агент завершил свою работу за " + mainTimer + " секунд");
+Log("----------------Конец. Агент------------------");
+```
+
+## Шаблон проекта бэкенда на TypeScript
+
+Шаблон, который сильно упростит написание бэкенда. Использует TypeScript, gulp, gulp-include.
+
+[Ссылка не репозиторий с шаблоном](https://github.com/praesidi/wt-typescript-backend-template)
